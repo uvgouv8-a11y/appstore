@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#7c3aed">
+<title>اب ستور</title>
+<style>
+:root{--bg:#f4f2ff;--card:#fff;--tx:#1e1b4b;--mu:#6b7280;--p:#7c3aed;--bd:#e8e6f5;--g:linear-gradient(135deg,#7c3aed,#06b6d4);--sh:0 4px 16px rgba(76,29,149,.10)}
+@media(prefers-color-scheme:dark){:root{--bg:#100e24;--card:#1c1838;--tx:#f1f0ff;--mu:#a5a3c4;--bd:#322d5a;--sh:none}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,Roboto,Tahoma,sans-serif;-webkit-user-select:none;user-select:none}
+input,textarea,select{-webkit-user-select:text;user-select:text}
+#app{min-height:100vh;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+.hd{background:var(--g);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 18px) 16px 22px;border-radius:0 0 28px 28px}
+.hd .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.hd small{opacity:.85}.hd h1{margin:2px 0 0;font-size:21px}
+.av{width:44px;height:44px;border-radius:50%;border:2px solid #fff;object-fit:cover;background:#fff3}
+.sr{width:100%;border:0;border-radius:16px;padding:13px 16px;font:inherit;background:var(--card);color:var(--tx);box-shadow:var(--sh)}
+.pad{padding:16px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:14px 16px 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:9px 15px;border-radius:20px;background:var(--card);border:1px solid var(--bd);font-size:14px;font-weight:600;color:var(--tx)}
+.chip.on{background:var(--g);color:#fff;border-color:transparent}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px}
+.pr{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--bd)}
+.pr img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--bd)}
+.pr div{padding:10px 12px}.pr b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr small{color:var(--mu);font-size:12px}.pr em{display:block;color:var(--p);font-weight:800;font-style:normal;margin-top:4px}
+.card{background:var(--card);border-radius:18px;padding:16px;margin:12px 16px;box-shadow:var(--sh);border:1px solid var(--bd)}
+.card h2{margin:0 0 12px;font-size:17px}
+input,textarea,select{width:100%;padding:13px;border:1px solid var(--bd);border-radius:14px;background:var(--bg);color:var(--tx);font:inherit;margin-bottom:10px}
+button{font:inherit;border:0;border-radius:14px;padding:13px 18px;background:var(--g);color:#fff;font-weight:700}
+button.o{background:transparent;color:var(--p);border:1.5px solid var(--p)}
+button.r{background:#ef4444}button.b{width:100%}
+.w{width:100%;background:#25d366;font-size:17px;padding:15px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));z-index:10}
+nav button{flex:1;background:none;color:var(--mu);font-size:11px;padding:6px;border-radius:12px}
+nav button span{display:block;font-size:22px}nav button.on{color:var(--p)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;z-index:20}
+.sheet{background:var(--card);width:100%;border-radius:26px 26px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));max-height:92vh;overflow:auto}
+.sheet img{width:100%;max-height:280px;object-fit:cover;border-radius:18px}
+.qty{display:flex;align-items:center;justify-content:center;gap:22px;margin:12px 0}
+.qty button{width:46px;height:46px;padding:0;font-size:22px}.qty b{font-size:22px}
+.row{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--bd)}
+.row img{width:58px;height:58px;border-radius:12px;object-fit:cover}.row div{flex:1}
+.mu{color:var(--mu);font-size:14px}.c{text-align:center}
+.login{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:24px;background:var(--g);color:#fff}
+.login h1{font-size:44px;margin:0}.login .box{background:var(--card);color:var(--tx);border-radius:24px;padding:20px;margin-top:26px}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.roles button{background:var(--bg);color:var(--tx);border:2px solid var(--bd);padding:16px 6px}
+.roles button.on{border-color:var(--p);color:var(--p)}
+.gb{background:#fff;color:#333;border:1px solid #ddd;display:flex;gap:10px;justify-content:center;align-items:center}
+</style></head><body><div id="app"></div>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import{getAuth,GoogleAuthProvider,signInWithPopup,signInWithCredential,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import{getFirestore,doc,getDoc,setDoc,addDoc,deleteDoc,collection,onSnapshot,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* ====== الصق هنا إعدادات مشروعك من Firebase Console ====== */
+const firebaseConfig={apiKey:"AIzaSyCd22LCjHQPcmDu-HbGlQatYlDq1N0t9e4",authDomain:"appstore-8d524.firebaseapp.com",projectId:"appstore-8d524",appId:"1:638187325545:web:22ed67e3a4acdc11affaf8"};
+/* ========================================================= */
+
+const CATS=[['all','الكل','🛍️'],['clothes','ملابس','👕'],['shoes','أحذية','👟'],['phones','موبايلات','📱'],['electronics','إلكترونيات','💻'],['home','المنزل','🏠'],['beauty','جمال وعناية','💄'],['sports','رياضة','⚽'],['food','أطعمة','🍔'],['other','أخرى','📦']];
+const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+const cap=window.Capacitor,native=!!cap?.isNativePlatform?.(),FA=cap?.Plugins?.FirebaseAuthentication;
+const ok=firebaseConfig.apiKey!=="YOUR_API_KEY";
+let auth,db,me=null,ready=false,role=localStorage.getItem('role')||'customer',stores={},prods=[],sel=null,qty=1,tab='home',cat='all',q='',sf=null;
+
+if(!ok)$('app').innerHTML='<div class="card"><h2>⚙️ محتاج إعداد Firebase</h2><p class="mu">حط إعدادات مشروعك في www/index.html</p></div>';
+else{
+ const app=initializeApp(firebaseConfig);auth=getAuth(app);db=getFirestore(app);
+ onSnapshot(collection(db,'stores'),s=>{stores={};s.forEach(d=>stores[d.id]=d.data());render()});
+ onSnapshot(collection(db,'products'),s=>{prods=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));render()});
+ onAuthStateChanged(auth,async u=>{
+  if(!u){me=null;ready=true;render();return}
+  const r=doc(db,'users',u.uid);let d=await getDoc(r);
+  if(!d.exists()){await setDoc(r,{role,name:u.displayName||'',email:u.email||''});d=await getDoc(r)}
+  const x=d.data();me={uid:u.uid,name:u.displayName||x.name,email:u.email,photo:u.photoURL,role:x.role};
+  if(me.role=='merchant'){const sr=doc(db,'stores',u.uid);if(!(await getDoc(sr)).exists())await setDoc(sr,{name:'',phone:'',desc:''});tab='mine'}else tab='home';
+  ready=true;render();
+ });
+}
+
+const nav=(items)=>`<nav>${items.map(([k,l,i])=>`<button data-t="${k}" class="${tab==k?'on':''}"><span>${i}</span>${l}</button>`).join('')}</nav>`;
+function render(){
+ if(!ok)return;const a=$('app');
+ if(!ready){a.innerHTML='<p class="mu c" style="padding-top:40vh">جاري التحميل…</p>';return}
+ if(!me){a.innerHTML=`<div class="login"><div class="c"><div style="font-size:64px">🛍️</div><h1>اب ستور</h1><p>سوق المحلات في جيبك</p></div>
+  <div class="box"><div class="roles"><button data-r="customer" class="${role=='customer'?'on':''}">🛒<br>مستخدم عادي</button><button data-r="merchant" class="${role=='merchant'?'on':''}">🏪<br>صاحب محل</button></div>
+  <button class="gb b" data-a="login"><b style="color:#4285f4;font-size:20px">G</b> الدخول بحساب جوجل</button></div></div>`;return}
+ let v='',n;
+ if(me.role=='merchant'){n=nav([['mine','منتجاتي','📦'],['add','إضافة','➕'],['shop','محلي','🏪']]);v=tab=='add'?add():tab=='shop'?shop():mine()}
+ else{n=nav([['home','الرئيسية','🏠'],['stores','المحلات','🏬'],['me','حسابي','👤']]);v=tab=='stores'?storesV():tab=='me'?acct():home()}
+ a.innerHTML=v+n+(sel?sheet():'');
+}
+const cards=l=>l.map(p=>`<div class="pr" data-p="${p.id}"><img src="${E(p.img)}" alt=""><div><b>${E(p.name)}</b><small>${E(stores[p.storeId]?.name)}</small><em>${p.price} ج.م</em></div></div>`).join('');
+function gridV(){const l=prods.filter(p=>stores[p.storeId]?.name&&(cat=='all'||p.cat==cat)&&(!sf||p.storeId==sf)&&(!q||p.name.includes(q)));return l.length?`<div class="grid">${cards(l)}</div>`:'<p class="mu c" style="padding:40px">لا توجد منتجات هنا</p>'}
+function home(){return`<div class="hd"><div class="t"><div><small>أهلاً 👋</small><h1>${E(me.name)}</h1></div>${me.photo?`<img class="av" src="${E(me.photo)}" alt="">`:''}</div><input id="q" class="sr" placeholder="🔍 ابحث عن منتج…" value="${E(q)}"></div>
+ <div class="chips">${CATS.map(c=>`<button class="chip ${cat==c[0]?'on':''}" data-c="${c[0]}">${c[2]} ${c[1]}</button>`).join('')}</div>
+ ${sf?`<div class="chips"><button class="chip on" data-a="clrs">🏬 ${E(stores[sf]?.name)} ✕</button></div>`:''}<div id="gr">${gridV()}</div>`}
+function storesV(){const l=Object.entries(stores).filter(([k,s])=>s.name);return`<div class="hd"><h1>🏬 المحلات</h1></div>`+(l.map(([k,s])=>`<div class="card" data-s="${k}"><b>${E(s.name)}</b><p class="mu">${E(s.desc)}</p><span class="mu">${prods.filter(p=>p.storeId==k).length} منتج</span></div>`).join('')||'<p class="mu c">لا توجد محلات</p>')}
+function acct(){return`<div class="hd c">${me.photo?`<img class="av" style="width:80px;height:80px" src="${E(me.photo)}" alt="">`:''}<h1>${E(me.name)}</h1><small>${E(me.email)}</small></div><div class="card"><p class="mu">نوع الحساب: مستخدم عادي</p><button class="r b" data-a="out">تسجيل الخروج</button></div>`}
+function mine(){const l=prods.filter(p=>p.storeId==me.uid);return`<div class="hd"><small>أهلاً 👋</small><h1>${E(stores[me.uid]?.name||'محلك')}</h1><small>${l.length} منتج</small></div><div class="card"><h2>📦 منتجاتي</h2>`+(l.map(p=>`<div class="row"><img src="${E(p.img)}" alt=""><div><b>${E(p.name)}</b><br><span class="mu">${(CATS.find(c=>c[0]==p.cat)||[])[1]||''} · ${p.price} ج.م</span></div><button class="o" data-a="del" data-p="${p.id}">حذف</button></div>`).join('')||'<p class="mu">لسه مفيش منتجات. اضغط ➕ إضافة.</p>')+'</div>'}
+function add(){return`<div class="hd"><h1>➕ إضافة منتج</h1></div><div class="card"><select id="pc">${CATS.slice(1).map(c=>`<option value="${c[0]}">${c[2]} ${c[1]}</option>`).join('')}</select>
+ <input id="pn" placeholder="اسم المنتج"><input id="pp" type="number" inputmode="decimal" min="0" placeholder="السعر (ج.م)"><textarea id="pd" rows="3" placeholder="تفاصيل (المقاسات، الألوان…)"></textarea>
+ <input id="pi" type="file" accept="image/*"><button class="b" data-a="addp">نشر المنتج</button></div>`}
+function shop(){const s=stores[me.uid]||{};return`<div class="hd"><h1>🏪 بيانات المحل</h1></div><div class="card"><input id="sn" placeholder="اسم المحل" value="${E(s.name)}"><input id="sp" type="tel" placeholder="رقم واتساب (مثال 01012345678)" value="${E(s.phone)}"><textarea id="sd" rows="2" placeholder="وصف المحل">${E(s.desc)}</textarea><button class="b" data-a="savestore">حفظ</button></div><div class="card"><button class="r b" data-a="out">تسجيل الخروج</button></div>`}
+function sheet(){const p=sel,s=stores[p.storeId]||{};return`<div class="modal" data-a="close"><div class="sheet"><img src="${E(p.img)}" alt=""><h2 style="margin:12px 0 4px">${E(p.name)}</h2><p class="mu">🏬 ${E(s.name)}<br>${E(p.desc)}</p><b style="color:var(--p);font-size:21px">${p.price} ج.م</b>
+ <div class="qty"><button data-a="minus">−</button><b>${qty}</b><button data-a="plus">+</button></div><p class="c" style="font-weight:800">الإجمالي: ${p.price*qty} ج.م</p><button class="w" data-a="order">طلب عبر واتساب 💬</button></div></div>`}
+function shrink(f){return new Promise(r=>{const im=new Image();im.onload=()=>{const k=Math.min(1,480/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.7))};im.src=URL.createObjectURL(f)})}
+const phone=n=>{n=String(n).replace(/\D/g,'');return n.startsWith('0')?'20'+n.slice(1):n};
+
+document.addEventListener('input',e=>{if(e.target.id=='q'){q=e.target.value.trim();$('gr').innerHTML=gridV()}});
+document.addEventListener('click',async e=>{
+ const t=e.target.closest('[data-r],[data-a],[data-p],[data-t],[data-c],[data-s]');if(!t||!ok)return;
+ try{
+ const d=t.dataset,a=d.a;
+ if(d.r){role=d.r;localStorage.setItem('role',role)}
+ else if(d.t){tab=d.t;sel=null}
+ else if(d.c)cat=d.c;
+ else if(d.s){sf=d.s;tab='home'}
+ else if(!a&&d.p){sel=prods.find(x=>x.id==d.p);qty=1}
+ else if(a=='login'){
+  if(native&&FA){const r=await FA.signInWithGoogle();await signInWithCredential(auth,GoogleAuthProvider.credential(r.credential.idToken))}
+  else await signInWithPopup(auth,new GoogleAuthProvider());return}
+ else if(a=='out'){if(native&&FA)await FA.signOut();await signOut(auth);sel=null;return}
+ else if(a=='close'){if(e.target!==t)return;sel=null}
+ else if(a=='clrs')sf=null;
+ else if(a=='plus')qty++;
+ else if(a=='minus'){if(qty>1)qty--}
+ else if(a=='order'){const s=stores[sel.storeId];if(!s?.phone)return alert('المحل لم يضف رقم واتساب');
+  const m=`مرحباً 👋 حابب أطلب من *${s.name}*:\n🛍️ المنتج: ${sel.name}\n🔢 الكمية: ${qty}\n💰 سعر الوحدة: ${sel.price} ج.م\n🧾 الإجمالي: ${sel.price*qty} ج.م\n📝 التفاصيل: ${sel.desc}\n👤 الاسم: ${me.name}`;
+  location.href='https://wa.me/'+phone(s.phone)+'?text='+encodeURIComponent(m);return}
+ else if(a=='savestore'){await setDoc(doc(db,'stores',me.uid),{name:$('sn').value.trim(),phone:$('sp').value.trim(),desc:$('sd').value.trim()});alert('تم الحفظ ✅');return}
+ else if(a=='addp'){const n=$('pn').value.trim(),pr=+$('pp').value,f=$('pi').files[0];
+  if(!stores[me.uid]?.name)return alert('اكتب اسم المحل أولاً من تبويب محلي');
+  if(!n||!pr||!f)return alert('اكتب الاسم والسعر واختر صورة');
+  await addDoc(collection(db,'products'),{storeId:me.uid,cat:$('pc').value,name:n,price:pr,desc:$('pd').value.trim(),img:await shrink(f),createdAt:serverTimestamp()});tab='mine'}
+ else if(a=='del'){if(confirm('حذف المنتج؟'))await deleteDoc(doc(db,'products',d.p));return}
+ render();
+ }catch(err){alert('حصل خطأ: '+(err.message||err))}
+});
+render();
+</script></body></html>
