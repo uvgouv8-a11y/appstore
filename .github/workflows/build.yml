@@ -24,6 +24,7 @@ jobs:
           npm install
           npx cap add android
           cp google-services.json android/app/google-services.json
+          sed -i 's/minSdkVersion = 2[0-9]/minSdkVersion = 24/' android/variables.gradle
           npx cap sync android
       - name: Add Firebase dependencies
         run: |
