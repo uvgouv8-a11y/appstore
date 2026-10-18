@@ -1,197 +1,139 @@
---------- beginning of system
-10-18 06:31:10.362   561   591 E StatsPullAtomService: subInfo of subId 1 is invalid, ignored.
---------- beginning of main
-10-18 06:31:10.383   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:10.393   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:10.403   808  1785 E BackupHelper: Could not parse delayed permissions
-10-18 06:31:10.403   808  1785 E BackupHelper: java.io.FileNotFoundException: /data/user_de/0/com.android.permissioncontroller/files/delayed_restore_permissions.xml: open failed: ENOENT (No such file or directory)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at libcore.io.IoBridge.open(IoBridge.java:574)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at java.io.FileInputStream.<init>(FileInputStream.java:160)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at android.app.ContextImpl.openFileInput(ContextImpl.java:714)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at com.android.permissioncontroller.permission.service.BackupHelper.restoreDelayedState(BackupHelper.java:339)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.onRestoreDelayedRuntimePermissionsBackup(PermissionControllerServiceImpl.java:421)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.lambda$onApplyStagedRuntimePermissionBackup$4(PermissionControllerServiceImpl.java:415)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.$r8$lambda$d0Nn-xRapZQvoyXU4vSZgmIHAHQ(Unknown Source:0)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl$$ExternalSyntheticLambda10.run(Unknown Source:8)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:305)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at java.lang.Thread.run(Thread.java:1012)
-10-18 06:31:10.403   808  1785 E BackupHelper: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at libcore.io.Linux.open(Native Method)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:7758)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	at libcore.io.IoBridge.open(IoBridge.java:560)
-10-18 06:31:10.403   808  1785 E BackupHelper: 	... 11 more
-10-18 06:31:10.510   561   591 E StatsPullAtomService: subInfo of subId 1 is invalid, ignored.
-10-18 06:31:10.547   561   591 E StatsPullAtomService: subInfo of subId 1 is invalid, ignored.
-10-18 06:31:10.586   994   994 E TelephonyProvider: internal sim-specific settings backup data file does not exist. Aborting restore
-10-18 06:31:10.633   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:10.662   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:11.329   207   207 E SELinux : avc:  denied  { find } for pid=1930 uid=99000 name=content_capture scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:content_capture_service:s0 tclass=service_manager permissive=0
+Performing Streamed Install
+Success
 --------- beginning of crash
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: FATAL EXCEPTION: main
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: Process: com.appstore.market, PID: 1819
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/auth/api/signin/GoogleSignIn;
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.buildGoogleSignInClient(GoogleAuthProviderHandler.java:123)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.buildGoogleSignInClient(GoogleAuthProviderHandler.java:107)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.<init>(GoogleAuthProviderHandler.java:36)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthentication.initAuthProviderHandlers(FirebaseAuthentication.java:935)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthentication.<init>(FirebaseAuthentication.java:68)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthenticationPlugin.load(FirebaseAuthenticationPlugin.java:71)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.loadInstance(PluginHandle.java:115)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.load(PluginHandle.java:105)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.<init>(PluginHandle.java:65)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.Bridge.registerPlugin(Bridge.java:691)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.Bridge.registerAllPlugins(Bridge.java:647)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.Bridge.<init>(Bridge.java:226)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.Bridge.<init>(Unknown Source:0)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.Bridge$Builder.create(Bridge.java:1566)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.BridgeActivity.load(BridgeActivity.java:48)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.getcapacitor.BridgeActivity.onCreate(BridgeActivity.java:42)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8305)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8284)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3626)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3782)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2307)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:7872)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.google.android.gms.auth.api.signin.GoogleSignIn" on path: DexPathList[[zip file "/data/app/~~SdO98rDwhIyljKKvH6iu7Q==/com.appstore.market-sHAs_q5r71nE0Ll1D1M2rg==/base.apk"],nativeLibraryDirectories=[/data/app/~~SdO98rDwhIyljKKvH6iu7Q==/com.appstore.market-sHAs_q5r71nE0Ll1D1M2rg==/lib/x86_64, /system/lib64, /system_ext/lib64]]
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
-10-18 06:31:11.419  1819  1819 E AndroidRuntime: 	... 32 more
-10-18 06:31:11.512   561  1156 E WindowManager: setOnBackInvokedCallback(): No window state for package:com.android.systemui
-10-18 06:31:11.987  2020  2038 E Traceur : traceService:stderr: Warning: No PTY. CTRL+C won't gracefully stop the trace. If you are running perfetto via adb shell, use the -tt arg (adb shell -t perfetto ...) or consider using the helper script tools/record_android_trace from the Perfetto repository.
-10-18 06:31:11.987  2020  2038 E Traceur : traceService:stderr: 
-10-18 06:31:11.988   469   469 E perfetto: ing_service_impl.cc:556 Failed to attach consumer, session 'traceur' not found for uid 10081
-10-18 06:31:11.995   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:12.274   561   581 E GnssUtilsJni: IGnssConfiguration setEsExtensionSec() failed.
-10-18 06:31:12.274   561   581 E GnssConfiguration: Unable to set ES_EXTENSION_SEC: 0
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: No service published for: ethernet
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:166)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$137.createService(SystemServiceRegistry.java:1825)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:1924)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1601)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2120)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:900)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1550)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2509)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2483)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:504)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.lambda$new$3(Tethering.java:339)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.$r8$lambda$gUNv5kQ9F3l-55GJaHD0NFxn_Fo(Unknown Source:0)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$$ExternalSyntheticLambda4.accept(Unknown Source:4)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.util.VersionedBroadcastListener$Receiver.onReceive(VersionedBroadcastListener.java:103)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0$android-app-LoadedApk$ReceiverDispatcher$Args(LoadedApk.java:1790)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(Unknown Source:2)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:942)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:99)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:201)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:288)
-10-18 06:31:12.279   936   964 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:67)
-10-18 06:31:12.390   561  2018 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-10-18 06:31:12.490   561   561 E NearbyManager: Cannot stop scan with this callback because it is never registered.
-10-18 06:31:12.503   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:12.509   561   581 E GnssUtilsJni: IGnssConfiguration setEsExtensionSec() failed.
-10-18 06:31:12.509   561   581 E GnssConfiguration: Unable to set ES_EXTENSION_SEC: 0
-10-18 06:31:12.558   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
---------- beginning of kernel
-10-18 06:31:12.860     0     0 E apexd   : Didn't generate uevent for [com.android.apex.cts.shim] removal
-10-18 06:31:12.872     0     0 E apexd   : Didn't generate uevent for [com.android.appsearch] removal
-10-18 06:31:12.885     0     0 E apexd   : Didn't generate uevent for [com.android.btservices] removal
-10-18 06:31:12.907     0     0 E apexd   : Didn't generate uevent for [com.android.i18n] removal
-10-18 06:31:12.935     0     0 E apexd   : Didn't generate uevent for [com.android.ondevicepersonalization] removal
-10-18 06:31:12.958     0     0 E apexd   : Didn't generate uevent for [com.android.os.statsd] removal
-10-18 06:31:12.968     0     0 E apexd   : Didn't generate uevent for [com.android.runtime] removal
-10-18 06:31:12.985     0     0 E apexd   : Didn't generate uevent for [com.android.scheduling] removal
-10-18 06:31:12.996     0     0 E apexd   : Didn't generate uevent for [com.android.sdkext] removal
-10-18 06:31:13.012     0     0 E apexd   : Didn't generate uevent for [com.android.tzdata] removal
-10-18 06:31:13.024     0     0 E apexd   : Didn't generate uevent for [com.android.vndk.v33] removal
-10-18 06:31:12.845  1329  1329 E NotificationUtils: Invalid channel requested: miscellaneous
-10-18 06:31:12.928   561   561 E MboOceController: onDataConnectionStateChanged unexpected State: 1
-10-18 06:31:12.928   561   743 E WifiDataStall: onDataConnectionStateChanged unexpected State: 1
-10-18 06:31:13.139   357   413 E Netd    : no such netId 101
-10-18 06:31:13.140   357   413 E Netd    : no such netId 101
-10-18 06:31:13.141   561   750 E ConnectivityService: Exception in networkAddRouteParcel for non-gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
-10-18 06:31:13.142   357   413 E Netd    : no such netId 101
-10-18 06:31:13.142   561   750 E ConnectivityService: Exception in networkAddRouteParcel for gateway: android.os.ServiceSpecificException: Machine is not on the network (code 64)
-10-18 06:31:13.179  2215  2232 E ActivityThread: Failed to find provider info for com.android.launcher2.settings
-10-18 06:31:13.211   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:13.319  1366  2255 E MultiDisplayService: invalid parameters for add/modify display
-10-18 06:31:13.610   488   631 E idmap2d : no resources were overlaid
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: No service published for: ethernet
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:166)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$137.createService(SystemServiceRegistry.java:1825)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:1924)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1601)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2120)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:900)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1550)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2509)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2483)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:504)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.lambda$new$3(Tethering.java:339)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.$r8$lambda$gUNv5kQ9F3l-55GJaHD0NFxn_Fo(Unknown Source:0)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$$ExternalSyntheticLambda4.accept(Unknown Source:4)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.util.VersionedBroadcastListener$Receiver.onReceive(VersionedBroadcastListener.java:103)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0$android-app-LoadedApk$ReceiverDispatcher$Args(LoadedApk.java:1790)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(Unknown Source:2)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:942)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:99)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:201)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:288)
-10-18 06:31:13.671   936   964 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:67)
-10-18 06:31:13.687   561   581 E GnssUtilsJni: IGnssConfiguration setEsExtensionSec() failed.
-10-18 06:31:13.687   561   581 E GnssConfiguration: Unable to set ES_EXTENSION_SEC: 0
-10-18 06:31:13.730   561   591 E system_server: No package ID 7f found for ID 0x7f0802f8.
-10-18 06:31:13.731   561   591 E system_server: No package ID 7f found for ID 0x7f131725.
-10-18 06:31:13.731   561   591 E system_server: No package ID 7f found for ID 0x7f0802f7.
-10-18 06:31:13.731   561   591 E system_server: No package ID 7f found for ID 0x7f1306ea.
-10-18 06:31:13.731   561   591 E system_server: No package ID 7f found for ID 0x7f0802f6.
-10-18 06:31:13.731   561   591 E system_server: No package ID 7f found for ID 0x7f130f22.
-10-18 06:31:13.904  2321  2321 E DrmHalHidl: uuid=[edef8ba979d64ace a3c827dcd51d21ed] No supported hal instance found
-10-18 06:31:13.905  2321  2321 E DrmHalHidl: uuid=[edef8ba979d64ace a3c827dcd51d21ed] No supported hal instance found
-10-18 06:31:14.243   803   911 E KeyguardUpdateMonitorLog: onSubscriptionInfoChanged()
-10-18 06:31:14.296  1371  1566 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android to set project id.: Operation not permitted
-10-18 06:31:14.299  1371  1566 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android/media to set project id.: Operation not permitted
-10-18 06:31:14.537   561   581 E GnssUtilsJni: IGnssConfiguration setEsExtensionSec() failed.
-10-18 06:31:14.537   561   581 E GnssConfiguration: Unable to set ES_EXTENSION_SEC: 0
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: No service published for: ethernet
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:166)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$137.createService(SystemServiceRegistry.java:1825)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:1924)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1601)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2120)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:900)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1550)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2509)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2483)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:504)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.lambda$new$3(Tethering.java:339)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.$r8$lambda$gUNv5kQ9F3l-55GJaHD0NFxn_Fo(Unknown Source:0)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$$ExternalSyntheticLambda4.accept(Unknown Source:4)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at com.android.networkstack.tethering.util.VersionedBroadcastListener$Receiver.onReceive(VersionedBroadcastListener.java:103)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0$android-app-LoadedApk$ReceiverDispatcher$Args(LoadedApk.java:1790)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(Unknown Source:2)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:942)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:99)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:201)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:288)
-10-18 06:31:14.538   936   964 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:67)
-10-18 06:31:18.714   561   596 E libprocessgroup: AddTidToCgroup failed to write '1854'; fd=416: Invalid argument
-10-18 06:31:18.714   561   596 E libprocessgroup: Failed to add task into cgroup
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: FATAL EXCEPTION: main
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: Process: com.appstore.market, PID: 1853
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/auth/api/signin/GoogleSignIn;
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.buildGoogleSignInClient(GoogleAuthProviderHandler.java:123)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.buildGoogleSignInClient(GoogleAuthProviderHandler.java:107)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.<init>(GoogleAuthProviderHandler.java:36)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthentication.initAuthProviderHandlers(FirebaseAuthentication.java:935)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthentication.<init>(FirebaseAuthentication.java:68)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthenticationPlugin.load(FirebaseAuthenticationPlugin.java:71)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.loadInstance(PluginHandle.java:115)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.load(PluginHandle.java:105)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.<init>(PluginHandle.java:65)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.registerPlugin(Bridge.java:691)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.registerAllPlugins(Bridge.java:647)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.<init>(Bridge.java:226)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.<init>(Unknown Source:0)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge$Builder.create(Bridge.java:1566)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.BridgeActivity.load(BridgeActivity.java:48)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.BridgeActivity.onCreate(BridgeActivity.java:42)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8305)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8284)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3626)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3782)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2307)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:7872)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.google.android.gms.auth.api.signin.GoogleSignIn" on path: DexPathList[[zip file "/data/app/~~6Sk-YWXAyGScYc4sL9CKRA==/com.appstore.market-D79kc2hxH-mHozt2BsKvNQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~6Sk-YWXAyGScYc4sL9CKRA==/com.appstore.market-D79kc2hxH-mHozt2BsKvNQ==/lib/x86_64, /system/lib64, /system_ext/lib64]]
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	... 32 more
+10-18 06:40:50.374   957   957 D MediaPlayerList: Name of package changed: com.appstore.market
+10-18 06:40:50.375   957   957 D MediaPlayerList: Name of package changed: com.appstore.market
+10-18 06:40:50.375  1404  1404 I MediaProvider: Invalidating LocalCallingIdentity cache for package com.appstore.market. Reason: package android.intent.action.PACKAGE_ADDED
+10-18 06:40:50.426   957   957 D MediaPlayerList: Name of package changed: com.appstore.market
+10-18 06:40:50.426   957   957 D MediaPlayerList: Name of package changed: com.appstore.market
+10-18 06:40:50.482  1790  1790 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-18 06:40:50.487  1790  1790 I AndroidRuntime: Using default boot image
+10-18 06:40:50.487  1790  1790 I AndroidRuntime: Leaving lock profiling enabled
+10-18 06:40:50.526   556  1375 W BackupTransportManager: Package com.appstore.market enabled setting: 0
+10-18 06:40:50.584  1790  1790 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+10-18 06:40:50.585  1790  1790 W Monkey  : args: [-p, com.appstore.market, -c, android.intent.category.LAUNCHER, 1]
+10-18 06:40:50.586  1790  1790 W Monkey  :  arg: "com.appstore.market"
+10-18 06:40:50.586  1790  1790 W Monkey  : data="com.appstore.market"
+10-18 06:40:50.603  1811  1811 W FirebaseApp: Default FirebaseApp failed to initialize because no default options were found. This usually means that com.google.gms:google-services was not applied to your gradle project.
+10-18 06:40:50.603  1811  1811 I FirebaseInitProvider: FirebaseApp initialization unsuccessful
+10-18 06:40:50.603   556  1675 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.appstore.market/.MainActivity} from uid 2000
+10-18 06:40:50.628   556   588 I ActivityManager: Start proc 1853:com.appstore.market/u0a126 for next-top-activity {com.appstore.market/com.appstore.market.MainActivity}
+10-18 06:40:50.647   991   991 D CarrierSvcBindHelper: onPackageAdded: com.appstore.market
+10-18 06:40:50.650   991   991 D CarrierSvcBindHelper: onPackageModified: com.appstore.market
+10-18 06:40:50.691  1853  1853 W ziparchive: Unable to open '/data/app/~~6Sk-YWXAyGScYc4sL9CKRA==/com.appstore.market-D79kc2hxH-mHozt2BsKvNQ==/base.dm': No such file or directory
+10-18 06:40:50.691  1853  1853 W ziparchive: Unable to open '/data/app/~~6Sk-YWXAyGScYc4sL9CKRA==/com.appstore.market-D79kc2hxH-mHozt2BsKvNQ==/base.dm': No such file or directory
+10-18 06:40:50.709  1790  1790 I AndroidRuntime: VM exiting with result code 0.
+10-18 06:40:50.743   556   570 D CoreBackPreview: Window{c3f1df u0 Splash Screen com.appstore.market}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@d870f5, mPriority=0}
+10-18 06:40:50.891  1853  1853 V GraphicsEnvironment: ANGLE Developer option for 'com.appstore.market' set to: 'default'
+10-18 06:40:50.891  1853  1853 V GraphicsEnvironment: ANGLE GameManagerService for com.appstore.market: false
+10-18 06:40:50.939  1853  1853 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+10-18 06:40:50.942  1853  1853 I FirebaseInitProvider: FirebaseApp initialization successful
+10-18 06:40:50.949   991   991 D ImsResolver: maybeAddedImsService, packageName: com.appstore.market
+10-18 06:40:50.959   991   991 D ImsResolver: maybeAddedImsService, packageName: com.appstore.market
+10-18 06:40:51.147  1853  1917 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.appstore.market/app_webview/variations_seed_new"
+10-18 06:40:51.147  1853  1917 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.appstore.market/app_webview/variations_seed"
+10-18 06:40:51.248   556   588 I ActivityManager: Start proc 1936:com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0ai9000 for  {com.appstore.market/org.chromium.content.app.SandboxedProcessService0:0}
+10-18 06:40:51.342   556   857 D ConnectivityService: requestNetwork for uid/pid:10126/1853 activeRequest: null callbackRequest: 34 [NetworkRequest [ REQUEST id=35, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-18 06:40:51.349   556   735 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=35, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ]
+10-18 06:40:51.349   556   735 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=35, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ]
+10-18 06:40:51.349   556   735 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=35, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ]
+10-18 06:40:51.349   556   735 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=35, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ]
+10-18 06:40:51.383  1853  1853 D Capacitor: Starting BridgeActivity
+10-18 06:40:51.400  1853  1853 D Capacitor: Registering plugin instance: CapacitorCookies
+10-18 06:40:51.410  1853  1853 D Capacitor: Registering plugin instance: WebView
+10-18 06:40:51.411  1853  1853 D Capacitor: Registering plugin instance: CapacitorHttp
+10-18 06:40:51.412  1853  1853 D Capacitor: Registering plugin instance: FirebaseAuthentication
+10-18 06:40:51.428  1853  1853 D AndroidRuntime: Shutting down VM
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: FATAL EXCEPTION: main
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: Process: com.appstore.market, PID: 1853
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/auth/api/signin/GoogleSignIn;
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.buildGoogleSignInClient(GoogleAuthProviderHandler.java:123)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.buildGoogleSignInClient(GoogleAuthProviderHandler.java:107)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.handlers.GoogleAuthProviderHandler.<init>(GoogleAuthProviderHandler.java:36)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthentication.initAuthProviderHandlers(FirebaseAuthentication.java:935)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthentication.<init>(FirebaseAuthentication.java:68)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at io.capawesome.capacitorjs.plugins.firebase.authentication.FirebaseAuthenticationPlugin.load(FirebaseAuthenticationPlugin.java:71)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.loadInstance(PluginHandle.java:115)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.load(PluginHandle.java:105)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.PluginHandle.<init>(PluginHandle.java:65)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.registerPlugin(Bridge.java:691)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.registerAllPlugins(Bridge.java:647)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.<init>(Bridge.java:226)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge.<init>(Unknown Source:0)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.Bridge$Builder.create(Bridge.java:1566)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.BridgeActivity.load(BridgeActivity.java:48)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.getcapacitor.BridgeActivity.onCreate(BridgeActivity.java:42)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8305)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8284)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3626)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3782)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2307)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:7872)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.google.android.gms.auth.api.signin.GoogleSignIn" on path: DexPathList[[zip file "/data/app/~~6Sk-YWXAyGScYc4sL9CKRA==/com.appstore.market-D79kc2hxH-mHozt2BsKvNQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~6Sk-YWXAyGScYc4sL9CKRA==/com.appstore.market-D79kc2hxH-mHozt2BsKvNQ==/lib/x86_64, /system/lib64, /system_ext/lib64]]
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
+10-18 06:40:51.430  1853  1853 E AndroidRuntime: 	... 32 more
+10-18 06:40:51.440   556  1747 W ActivityTaskManager:   Force finishing activity com.appstore.market/.MainActivity
+10-18 06:40:51.472   556   923 I ActivityManager: Process com.appstore.market (pid 1853) has died: fg  TOP 
+10-18 06:40:51.472   556  1552 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(uid/pid:10126/1853, [NetworkRequest [ REQUEST id=35, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ]], android.os.BinderProxy@c14fd45)
+10-18 06:40:51.473   556  1552 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(uid/pid:10126/1853, [NetworkRequest [ LISTEN id=36, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ]], android.os.BinderProxy@2790c9a)
+10-18 06:40:51.473   556   742 D ConnectivityService: releasing NetworkRequest [ REQUEST id=35, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10126 RequestorUid: 10126 RequestorPkg: com.appstore.market UnderlyingNetworks: Null] ] (release request)
+10-18 06:40:51.488   556   729 W InputManager-JNI: Input channel object 'c3f1df Splash Screen com.appstore.market (client)' was disposed without first being removed with the input manager!
+10-18 06:40:51.940   556   579 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{be515e9 u0 com.appstore.market/.MainActivity} t-1 f}}
+10-18 06:40:53.745   556   610 I AppsFilter: interaction: PackageSetting{c8e9264 com.appstore.market/10126} -> PackageSetting{6a6fccd com.android.camera2/10096} BLOCKED
+10-18 06:40:53.745   556   610 I AppsFilter: interaction: PackageSetting{c8e9264 com.appstore.market/10126} -> PackageSetting{9ae4982 com.android.calendar/10091} BLOCKED
+10-18 06:40:53.745   556   610 I AppsFilter: interaction: PackageSetting{c8e9264 com.appstore.market/10126} -> PackageSetting{6271893 com.android.gallery3d/10099} BLOCKED
+10-18 06:40:53.745   556   610 I AppsFilter: interaction: PackageSetting{c8e9264 com.appstore.market/10126} -> PackageSetting{cd470d0 com.android.inputmethod.latin/10090} BLOCKED
+10-18 06:40:53.745   556   610 I AppsFilter: interaction: PackageSetting{c8e9264 com.appstore.market/10126} -> PackageSetting{1b398c9 com.android.cellbroadcastreceiver.module/10111} BLOCKED
+10-18 06:40:53.746   556   610 I AppsFilter: interaction: PackageSetting{c8e9264 com.appstore.market/10126} -> PackageSetting{67b7bce com.android.remoteprovisioner/10105} BLOCKED
