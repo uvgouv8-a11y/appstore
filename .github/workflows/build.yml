@@ -46,11 +46,12 @@ jobs:
           api-level: 33
           arch: x86_64
           script: |
-            adb install -r android/app/build/outputs/apk/debug/app-debug.apk
+            adb install -r android/app/build/outputs/apk/debug/app-debug.apk > crash.log 2>&1
             adb logcat -c
             adb shell monkey -p com.appstore.market -c android.intent.category.LAUNCHER 1
-            sleep 25
-            adb logcat -d *:E > crash.log
+            sleep 30
+            adb logcat -d -b crash >> crash.log
+            adb logcat -d | grep -iE "AndroidRuntime|com.appstore|Capacitor|FirebaseApp|FATAL" >> crash.log || true
       - name: Save crash log
         if: always()
         run: |
