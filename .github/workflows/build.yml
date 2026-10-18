@@ -25,6 +25,19 @@ jobs:
           npx cap add android
           cp google-services.json android/app/google-services.json
           npx cap sync android
+      - name: Add Firebase dependencies
+        run: |
+          cat >> android/app/build.gradle <<'EOF'
+
+          dependencies {
+              implementation platform('com.google.firebase:firebase-bom:33.1.2')
+              implementation 'com.google.firebase:firebase-auth'
+              implementation 'com.google.android.gms:play-services-auth:21.2.0'
+              implementation 'androidx.credentials:credentials:1.2.2'
+              implementation 'androidx.credentials:credentials-play-services-auth:1.2.2'
+              implementation 'com.google.android.libraries.identity.googleid:googleid:1.1.1'
+          }
+          EOF
       - name: Fixed debug key
         run: |
           mkdir -p ~/.android
@@ -46,19 +59,20 @@ jobs:
           api-level: 33
           arch: x86_64
           script: |
-            adb install -r android/app/build/outputs/apk/debug/app-debug.apk > crash.log 2>&1
+            adb install -r android/app/build/outputs/apk/debug/app-debug.apk
             adb logcat -c
             adb shell monkey -p com.appstore.market -c android.intent.category.LAUNCHER 1
             sleep 30
-            adb logcat -d -b crash >> crash.log
-            adb logcat -d | grep -iE "AndroidRuntime|com.appstore|Capacitor|FirebaseApp|FATAL" >> crash.log || true
-      - name: Save crash log
+            adb logcat -d | grep -E "NoClassDefFound|ClassNotFound|Caused by|FATAL|Capacitor" | sed 's/.*AndroidRuntime: //' | cut -c1-250 > error.txt
+      - name: Save error log
         if: always()
         run: |
+          rm -f crash.log
+          touch error.txt
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add crash.log || true
-          git commit -m "crash log [skip ci]" || true
+          git add -A error.txt crash.log || true
+          git commit -m "error log [skip ci]" || true
           git push || true
       - name: Publish APK
         uses: softprops/action-gh-release@v2
